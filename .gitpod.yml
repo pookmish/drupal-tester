@@ -29,6 +29,7 @@ tasks:
       drush si standard --db=url=mysql://root@localhost/drupal -y &&
       chmod -R 777 web/sites
     command: |
+      git remote set-url origin git@github.com:pookmish/drupal-tester.git
       apache2ctl restart
       gp await-port 8001
       git config core.fileMode false
