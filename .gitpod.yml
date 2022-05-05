@@ -25,6 +25,7 @@ tasks:
     init: >
       export PREVIEW_FULL_URL=`gp url 8001` &&
       export PREVIEW_URL=${PREVIEW_FULL_URL#"https://"} &&
+      composer install --no-interaction &&
       drush si standard --db=url=mysql://root@localhost/drupal -y &&
       chmod -R 777 web/sites
     command: |
